@@ -9,17 +9,21 @@
             crossorigin
             src="https://unpkg.com/react@16/umd/react.development.js"
         ></script>
+        <!-- 남의 코드 불러오기 -->
         <script
             crossorigin
             src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
         ></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <!-- 바벨 부르기 -->
 
         <script type="text/babel">
+            // 바벨 설정
             "use strict";
             const GuGuDan = () => {
+                // 화살표 함수
                 const [first, setFirst] = React.useState(
-                    Math.ceil(Math.random() * 9)
+                    Math.ceil(Math.random() * 9) //변수 설정, 기본값과 값이 바뀌는 함수가 들어감
                 );
                 const [second, setSecond] = React.useState(
                     Math.ceil(Math.random() * 9)
@@ -29,8 +33,9 @@
                 const inputEl = React.useRef(null);
 
                 const onSubmitForm = (e) => {
-                    e.preventDefault();
+                    e.preventDefault(); //이벤트 멈추기
                     if (parseInt(value) === first * second) {
+                        //입력값과 정답 비교한 후 결과 출력
                         setResult("정답");
                         setFirst(Math.ceil(Math.random() * 9));
                         setSecond(Math.ceil(Math.random() * 9));
@@ -39,10 +44,11 @@
                     } else {
                         setResult("땡");
                         setValue("");
-                        inputEl.current.focus();
+                        inputEl.current.focus(); //포커스 상태로 만들어 줌
                     }
                 };
                 return (
+                    // 반환
                     <React.Fragment>
                         <div>
                             {first} 곱하기 {second}는?

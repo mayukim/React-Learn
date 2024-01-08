@@ -20,7 +20,7 @@ const GuGuDan = () => {
         } else {
             setResult("땡");
             setValue("");
-            inputEl.current.focus();
+            inputEl.current.focus(); //포커스 상태로 만들어 줌
         }
     };
     return (

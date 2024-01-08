@@ -6,13 +6,13 @@
             crossorigin
             src="https://unpkg.com/react@16/umd/react.development.js"
         ></script>
-        {/*남의 코드 불러오기*/}
+        <!-- 남의 코드 불러오기 -->
         <script
             crossorigin
             src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
         ></script>
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-        {/*바벨 부르기*/}
+        <!-- 바벨 부르기 -->
     </head>
     <body>
         <div id="root"></div>
@@ -36,7 +36,7 @@
                         this.setState((prevState) => {
                             return {
                                 //반환하기
-                                result: "정답: " + prevState.value, //
+                                result: "정답: " + prevState.value, //정답 출력하기
                                 first: Math.ceil(Math.random() * 9),
                                 second: Math.ceil(Math.random() * 9),
                                 value: "",
@@ -48,12 +48,12 @@
                             result: "땡",
                             value: "",
                         });
-                        this.input.focus();
+                        this.input.focus(); //포커스 상태로 만들어 줌
                     }
                 };
 
                 onChange = (e) => {
-                    this.setState({ value: e.target.value });
+                    this.setState({ value: e.target.value }); //값이 바뀌면 value에 입력값 넣기
                 };
 
                 input;
