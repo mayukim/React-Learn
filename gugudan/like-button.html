@@ -1,0 +1,45 @@
+<html>
+    <head> </head>
+    <body>
+        <div id="root"></div>
+        <script
+            crossorigin
+            src="https://unpkg.com/react@16/umd/react.development.js"
+        ></script>
+        <script
+            crossorigin
+            src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+        ></script>
+        <!--<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>-->
+        <!--<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>-->
+        <script>
+            "use strict";
+
+            const e = React.createElement;
+
+            class LikeButton extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = { liked: false };
+                }
+
+                render() {
+                    // 출력할 내용
+                    if (this.state.liked) {
+                        return "You liked this."; //반환
+                    }
+
+                    return e(
+                        "button", //태그 이름(div, spen, button등)
+                        { onClick: () => this.setState({ liked: true }) }, //class, onClick, onChange ``
+                        //화살표 함수 () => {return}
+                        "Like" //내용
+                    );
+                }
+            }
+        </script>
+        <script>
+            ReactDOM.render(e(LikeButton), document.querySelector("#root"));
+        </script>
+    </body>
+</html>
